@@ -11,7 +11,7 @@
 				<properties isSpecification="false" sType="Package" nType="0" scope="public"/>
 				<project author="ppbr003" version="1.0" phase="1.0" created="2022-07-20 14:53:07" modified="2022-07-20 14:53:07" complexity="1" status="Proposed"/>
 				<code gentype="Java"/>
-				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<style appearance="BackColor=-4;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
 				<tags/>
 				<xrefs/>
 				<extendedProperties tagged="0" package_name="LTDSProject"/>
