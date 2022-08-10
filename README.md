@@ -13,8 +13,8 @@ Ofgem convened a working group consisting of representattives from end-users, an
 * Leverage the Common Information Model (CIM) as an international standard to encourage interoperability with Transmission models and other GB data exchanges
 
 # Contents of this repository
-The folder 'Profile development' contains UML files (.eap) and summary documentation (.xlsx) which describe the format of the data exchange and specify the structure, syntax and semantics of how data may be exchanged.
+The folder ['Profile development'](Profile Development) contains UML files (.eap) and summary documentation (.xlsx) which describe the format of the data exchange and specify the structure, syntax and semantics of how data may be exchanged.
 The folder 'Test models' contains a number of sample network models (.xml) described according to this exchange standard.
 
 ## Get in touch
-For official information on the working group convened by Ofgem, or if you are a (potential) user of this data and would like to participate, pleas contact
+For official information on the working group convened by Ofgem, or if you are a (potential) user of this data and would like to participate, please contact
