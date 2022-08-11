@@ -17,4 +17,4 @@ The folder 'Profile development' contains UML files (.eap) and summary documenta
 The folder 'Test models' contains a number of sample network models (.xml) described according to this exchange standard.
 
 ## Get in touch
-For official information on the working group convened by Ofgem, or if you are a (potential) user of this data and would like to participate, please contact
+For official information on the working group convened by Ofgem, or if you are a (potential) user of this data and would like to participate, please contact jaye.nozarick@ofgem.gov.uk or alex.walmsley@ofgem.gov.uk
