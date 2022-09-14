@@ -17,9 +17,11 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
 xmlns:md="http://iec.ch/TC57/61970-552/ModelDescription/1#"
 xmlns:dm="http://iec.ch/TC57/61970-552/DifferenceModel/1#"
 xmlns:prov="http://www.w3.org/ns/prov#"
+xmlns:gb="http://ofgem.gov.uk/ns/CIM/LTDS/Extensions#"
 xmlns:eq="http://ofgem.gov.uk/ns/CIM/LTDS/Equipment#"
 xml:base ="http://iec.ch/TC57/CIM100"
 >
+
 <!--  ********** Header **************** -->
 <!-- RDFS header -->
 <rdf:Description rdf:about = "http://ofgem.gov.uk/ns/CIM/LTDS/Equipment#Ontology">
@@ -37,7 +39,7 @@ xml:base ="http://iec.ch/TC57/CIM100"
 	<dcterms:identifier>urn:uuid:1f8f8c6f-1b69-499f-9738-904873cf96a5</dcterms:identifier>
 	<dcterms:language>en-GB</dcterms:language>
 	<dcterms:license xml:lang ="en">https://www.apache.org/licenses/LICENSE-2.0</dcterms:license>
-	<dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-09-05</dcterms:modified>
+	<dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-09-09</dcterms:modified>
 	<dcterms:publisher xml:lang ="en">Ofgem</dcterms:publisher>
 	<dcterms:rightsHolder xml:lang ="en">Ofgem</dcterms:rightsHolder>
 	<dcterms:title xml:lang ="en">LTDS Equipment Vocabulary</dcterms:title>
@@ -1335,26 +1337,6 @@ For example, the SI unit for mass is &quot;kg&quot; and not &quot;g&quot;.  If t
 	<cims:AssociationUsed>No</cims:AssociationUsed>
 	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
 	 </rdf:Description>
-	 <rdf:Description rdf:about="#PerLengthImpedance.ACLineSegments">
-	<rdfs:label xml:lang="en">ACLineSegments</rdfs:label>
-	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">All line segments described by this per-length impedance.</rdfs:comment>
-	<rdfs:domain rdf:resource="#PerLengthImpedance"/>
-	<rdfs:range rdf:resource="#ACLineSegment"/>
-	<cims:inverseRoleName rdf:resource="#ACLineSegment.PerLengthImpedance"/>
-	<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..n"/>
-	<cims:AssociationUsed>No</cims:AssociationUsed>
-	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-	 </rdf:Description>
-	 <rdf:Description rdf:about="#ACLineSegment.PerLengthImpedance">
-	<rdfs:label xml:lang="en">PerLengthImpedance</rdfs:label>
-	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Per-length impedance of this line segment.</rdfs:comment>
-	<rdfs:domain rdf:resource="#ACLineSegment"/>
-	<rdfs:range rdf:resource="#PerLengthImpedance"/>
-	<cims:inverseRoleName rdf:resource="#PerLengthImpedance.ACLineSegments"/>
-	<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
-	<cims:AssociationUsed>Yes</cims:AssociationUsed>
-	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-	 </rdf:Description>
 	 <rdf:Description rdf:about="#ActivePowerLimit">
 	<rdfs:label xml:lang="en">ActivePowerLimit</rdfs:label>
 	<rdfs:subClassOf rdf:resource="#OperationalLimit"/>
@@ -2191,7 +2173,7 @@ A Clamp is ConductingEquipment and has one Terminal with an associated Connectiv
 	<rdfs:label xml:lang="en">length</rdfs:label>
 	<rdfs:domain rdf:resource="#Conductor"/>
 	<cims:dataType rdf:resource="#Length"/>
-	<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1" />
+	<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1" />
 	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Segment length for calculating line section capabilities.</rdfs:comment>
 	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
 	 </rdf:Description>
@@ -5998,7 +5980,7 @@ Each PowerTransformerEnd must be contained by a PowerTransformer. Because a Powe
 	<rdfs:label xml:lang="en">connectionKind</rdfs:label>
 	<rdfs:domain rdf:resource="#PowerTransformerEnd"/>
 	<rdfs:range rdf:resource="#WindingConnection"/>
-	<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1" />
+	<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1" />
 	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kind of connection.</rdfs:comment>
 	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
 	 </rdf:Description>
@@ -7711,64 +7693,4 @@ The primitive is serialized as literal without language support.</rdfs:comment>
 	<rdfs:label xml:lang="en">AdditionalClasses</rdfs:label>
 	<rdf:type rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#ClassCategory"/>
 </rdf:Description>
-	 <rdf:Description rdf:about="#PerLengthImpedance">
-	<rdfs:label xml:lang="en">PerLengthImpedance</rdfs:label>
-	<rdfs:subClassOf rdf:resource="#PerLengthLineParameter"/>
-	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Common type for per-length impedance electrical catalogues.</rdfs:comment>
-	<cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/Equipment#Package_AdditionalClasses"/>
-	<cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
-	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-	 </rdf:Description>
-	 <rdf:Description rdf:about="#PerLengthLineParameter">
-	<rdfs:label xml:lang="en">PerLengthLineParameter</rdfs:label>
-	<rdfs:subClassOf rdf:resource="#IdentifiedObject"/>
-	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Common type for per-length electrical catalogues describing line parameters.</rdfs:comment>
-	<cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/Equipment#Package_AdditionalClasses"/>
-	<cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
-	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-	 </rdf:Description>
-	 <rdf:Description rdf:about="#PerLengthSequenceImpedance">
-	<rdfs:label xml:lang="en">PerLengthSequenceImpedance</rdfs:label>
-	<rdfs:subClassOf rdf:resource="#PerLengthImpedance"/>
-	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sequence impedance and admittance parameters per unit length, for transposed lines of 1, 2, or 3 phases. For 1-phase lines, define x=x0=xself. For 2-phase lines, define x=xs-xm and x0=xs+xm.</rdfs:comment>
-	<cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/Equipment#Package_AdditionalClasses"/>
-	<cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
-	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-	 </rdf:Description>
-	 <rdf:Description rdf:about="#PerLengthSequenceImpedance.bch">
-	<cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
-	<rdfs:label xml:lang="en">bch</rdfs:label>
-	<rdfs:domain rdf:resource="#PerLengthSequenceImpedance"/>
-	<cims:dataType rdf:resource="#SusceptancePerLength"/>
-	<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1" />
-	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Positive sequence shunt (charging) susceptance, per unit of length.</rdfs:comment>
-	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-	 </rdf:Description>
-	 <rdf:Description rdf:about="#PerLengthSequenceImpedance.gch">
-	<cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
-	<rdfs:label xml:lang="en">gch</rdfs:label>
-	<rdfs:domain rdf:resource="#PerLengthSequenceImpedance"/>
-	<cims:dataType rdf:resource="#ConductancePerLength"/>
-	<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1" />
-	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Positive sequence shunt (charging) conductance, per unit of length.</rdfs:comment>
-	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-	 </rdf:Description>
-	 <rdf:Description rdf:about="#PerLengthSequenceImpedance.r">
-	<cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
-	<rdfs:label xml:lang="en">r</rdfs:label>
-	<rdfs:domain rdf:resource="#PerLengthSequenceImpedance"/>
-	<cims:dataType rdf:resource="#ResistancePerLength"/>
-	<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1" />
-	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Positive sequence series resistance, per unit of length.</rdfs:comment>
-	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-	 </rdf:Description>
-	 <rdf:Description rdf:about="#PerLengthSequenceImpedance.x">
-	<cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
-	<rdfs:label xml:lang="en">x</rdfs:label>
-	<rdfs:domain rdf:resource="#PerLengthSequenceImpedance"/>
-	<cims:dataType rdf:resource="#ReactancePerLength"/>
-	<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1" />
-	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Positive sequence series reactance, per unit of length.</rdfs:comment>
-	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-	 </rdf:Description>
 </rdf:RDF>

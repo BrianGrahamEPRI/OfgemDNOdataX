@@ -17,9 +17,11 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
 xmlns:md="http://iec.ch/TC57/61970-552/ModelDescription/1#"
 xmlns:dm="http://iec.ch/TC57/61970-552/DifferenceModel/1#"
 xmlns:prov="http://www.w3.org/ns/prov#"
+xmlns:gb="http://ofgem.gov.uk/ns/CIM/LTDS/Extensions#"
 xmlns:sc="http://ofgem.gov.uk/ns/CIM/LTDS/ShortCircuit#"
 xml:base ="http://iec.ch/TC57/CIM100"
 >
+
 <!--  ********** Header **************** -->
 <!-- RDFS header -->
 <rdf:Description rdf:about = "http://ofgem.gov.uk/ns/CIM/LTDS/ShortCircuit#Ontology">
@@ -37,7 +39,7 @@ xml:base ="http://iec.ch/TC57/CIM100"
 	<dcterms:identifier>urn:uuid:568e0e0a-158f-4899-aac7-b447b073cf7d</dcterms:identifier>
 	<dcterms:language>en-GB</dcterms:language>
 	<dcterms:license xml:lang ="en">https://www.apache.org/licenses/LICENSE-2.0</dcterms:license>
-	<dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-09-05</dcterms:modified>
+	<dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-09-09</dcterms:modified>
 	<dcterms:publisher xml:lang ="en">Ofgem</dcterms:publisher>
 	<dcterms:rightsHolder xml:lang ="en">Ofgem</dcterms:rightsHolder>
 	<dcterms:title xml:lang ="en">LTDS Short Circuit Vocabulary</dcterms:title>
@@ -2804,6 +2806,48 @@ This attribute is used to describe the operating voltage of the generating unit.
 	<cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/ShortCircuit#Package_LTDSShortCircuitProfile"/>
 	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
 	 </rdf:Description>
+	 <rdf:Description rdf:about="http://ofgem.gov.uk/ns/CIM/LTDS/Extensions#TransformerEnd.earthingMethod">
+	<cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+	<rdfs:label xml:lang="en">earthingMethod</rdfs:label>
+	<rdfs:domain rdf:resource="#TransformerEnd"/>
+	<rdfs:range rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/Extensions#EarthingMethodKind"/>
+	<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1" />
+	<cims:stereotype>GB</cims:stereotype>
+	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Type of grounding. </rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	 </rdf:Description>
+	 <rdf:Description rdf:about="http://ofgem.gov.uk/ns/CIM/LTDS/Extensions#EarthingMethodKind">
+	<rdfs:label xml:lang="en">EarthingMethodKind</rdfs:label>
+	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The method of grounding employed on a transformer winding.</rdfs:comment>
+	<cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/ShortCircuit#Package_ExtTransformer"/>
+	<cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#enumeration"/>
+<cims:stereotype>GB</cims:stereotype>
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	 </rdf:Description>
+	 <rdf:Description rdf:about="http://ofgem.gov.uk/ns/CIM/LTDS/Extensions#EarthingMethodKind.resistance">
+	<rdfs:label xml:lang="en">resistance</rdfs:label>
+	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Resistance grounding (LTDS), Neutral grounding resistors (GC0139).</rdfs:comment>
+	<cims:stereotype>enum</cims:stereotype>
+	<rdf:type rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/Extensions#EarthingMethodKind"/>
+</rdf:Description>
+	 <rdf:Description rdf:about="http://ofgem.gov.uk/ns/CIM/LTDS/Extensions#EarthingMethodKind.solid">
+	<rdfs:label xml:lang="en">solid</rdfs:label>
+	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Solid grounding (LTDS), Solid (GC0139).</rdfs:comment>
+	<cims:stereotype>enum</cims:stereotype>
+	<rdf:type rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/Extensions#EarthingMethodKind"/>
+</rdf:Description>
+	 <rdf:Description rdf:about="http://ofgem.gov.uk/ns/CIM/LTDS/Extensions#EarthingMethodKind.throughEarthTransformer">
+	<rdfs:label xml:lang="en">throughEarthTransformer</rdfs:label>
+	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Through earth transformer (LTDS), Through earthing transformer (GC0139).</rdfs:comment>
+	<cims:stereotype>enum</cims:stereotype>
+	<rdf:type rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/Extensions#EarthingMethodKind"/>
+</rdf:Description>
+	 <rdf:Description rdf:about="http://ofgem.gov.uk/ns/CIM/LTDS/Extensions#EarthingMethodKind.reactance">
+	<rdfs:label xml:lang="en">reactance</rdfs:label>
+	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reactance grounding (LTDS).</rdfs:comment>
+	<cims:stereotype>enum</cims:stereotype>
+	<rdf:type rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/Extensions#EarthingMethodKind"/>
+</rdf:Description>
 	 <rdf:Description rdf:about="#TransformerEnd.rground">
 	<cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
 	<rdfs:label xml:lang="en">rground</rdfs:label>
@@ -3024,48 +3068,4 @@ The primitive is serialized as literal without language support.</rdfs:comment>
 	<rdfs:label xml:lang="en">AdditionalClasses</rdfs:label>
 	<rdf:type rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#ClassCategory"/>
 </rdf:Description>
-	 <rdf:Description rdf:about="#PerLengthSequenceImpedance">
-	<rdfs:label xml:lang="en">PerLengthSequenceImpedance</rdfs:label>
-	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sequence impedance and admittance parameters per unit length, for transposed lines of 1, 2, or 3 phases. For 1-phase lines, define x=x0=xself. For 2-phase lines, define x=xs-xm and x0=xs+xm.</rdfs:comment>
-<cims:stereotype>Description</cims:stereotype>
-	<cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/ShortCircuit#Package_AdditionalClasses"/>
-	<cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
-	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-	 </rdf:Description>
-	 <rdf:Description rdf:about="#PerLengthSequenceImpedance.b0ch">
-	<cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
-	<rdfs:label xml:lang="en">b0ch</rdfs:label>
-	<rdfs:domain rdf:resource="#PerLengthSequenceImpedance"/>
-	<cims:dataType rdf:resource="#SusceptancePerLength"/>
-	<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1" />
-	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zero sequence shunt (charging) susceptance, per unit of length.</rdfs:comment>
-	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-	 </rdf:Description>
-	 <rdf:Description rdf:about="#PerLengthSequenceImpedance.g0ch">
-	<cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
-	<rdfs:label xml:lang="en">g0ch</rdfs:label>
-	<rdfs:domain rdf:resource="#PerLengthSequenceImpedance"/>
-	<cims:dataType rdf:resource="#ConductancePerLength"/>
-	<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1" />
-	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zero sequence shunt (charging) conductance, per unit of length.</rdfs:comment>
-	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-	 </rdf:Description>
-	 <rdf:Description rdf:about="#PerLengthSequenceImpedance.r0">
-	<cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
-	<rdfs:label xml:lang="en">r0</rdfs:label>
-	<rdfs:domain rdf:resource="#PerLengthSequenceImpedance"/>
-	<cims:dataType rdf:resource="#ResistancePerLength"/>
-	<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1" />
-	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zero sequence series resistance, per unit of length.</rdfs:comment>
-	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-	 </rdf:Description>
-	 <rdf:Description rdf:about="#PerLengthSequenceImpedance.x0">
-	<cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
-	<rdfs:label xml:lang="en">x0</rdfs:label>
-	<rdfs:domain rdf:resource="#PerLengthSequenceImpedance"/>
-	<cims:dataType rdf:resource="#ReactancePerLength"/>
-	<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1" />
-	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zero sequence series reactance, per unit of length.</rdfs:comment>
-	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-	 </rdf:Description>
 </rdf:RDF>
